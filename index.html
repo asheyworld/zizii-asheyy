@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Zizi ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap');
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,sans-serif;overflow:hidden;color:#123d68}
+.page{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;min-height:100dvh;text-align:center;overflow:hidden}
+.page.active{display:flex}
+button{border:0;cursor:pointer;font-family:inherit}
+.content{position:relative;z-index:3;padding:24px;width:92%}
+h1,h2{font-family:'Baloo 2',cursive;margin:0}
+
+.sea-bg{background:linear-gradient(180deg,#e8fbff,#9de4f7 48%,#287fb1)}
+.sea-bg:after{content:"";position:absolute;bottom:0;width:100%;height:20%;background:#145477;clip-path:polygon(0 35%,15% 15%,30% 40%,45% 15%,60% 35%,80% 10%,100% 30%,100% 100%,0 100%)}
+
+.bubbles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.bubble{position:absolute;bottom:-35px;border:1.5px solid #ffffff99;border-radius:50%;background:#ffffff35;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh);opacity:0}}
+
+.zizi{font:800 clamp(5.5rem,22vw,10rem)/.9 'Baloo 2';color:white;text-shadow:0 6px 0 #62b9dc,0 12px 22px #145d8a55;position:relative}
+.fishdot{position:absolute;width:25px;top:0;left:37%}
+
+.smallhint{color:white;font-weight:800}
+.play{margin-top:25px;padding:12px 34px;border-radius:30px;background:white;color:#17628a;font-weight:900;font-size:1.05rem;box-shadow:0 7px 0 #8bd6e9}
+
+/* CORAL */
+.coral{position:absolute;bottom:0;width:100%;height:23%;z-index:2;pointer-events:none}
+.coral svg{width:100%;height:100%}
+
+/* STARFISH */
+.star-wrap{width:190px;height:190px;margin:auto;animation:wobble 1.4s infinite alternate;filter:drop-shadow(0 15px 10px #14507844)}
+@keyframes wobble{from{transform:rotate(-9deg)}to{transform:rotate(9deg) translateY(-12px)}}
+.speech{display:inline-block;background:white;border-radius:22px;padding:12px 20px;font-weight:900;box-shadow:0 6px 0 #c4eff8;margin:15px auto;position:relative}
+.flower{position:fixed;top:-40px;width:25px;height:25px;z-index:15;animation:fall 4s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg)}}
+
+/* SUNSET */
+.sunset{background:linear-gradient(#ffcfb4 0%,#f79b91 42%,#a5c8d7 68%,#266d91 69%,#104b70 100%)}
+.sun{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:125px;height:125px;border-radius:50%;background:linear-gradient(#fff2b7,#ff9d68);box-shadow:0 0 50px #ffe0a8aa}
+.water{position:absolute;bottom:0;width:100%;height:34%;background:repeating-linear-gradient(0deg,#145477 0 8px,#1e6689 9px 13px)}
+.boat{position:absolute;bottom:25%;left:50%;transform:translateX(-50%);width:min(90%,390px);height:200px;z-index:3}
+.boat-hull{position:absolute;bottom:10px;left:8%;width:84%;height:50px;background:#8a563f;clip-path:polygon(0 0,100% 0,85% 100%,15% 100%);border-bottom:7px solid #633c32}
+.boat-label{position:absolute;top:2px;font-weight:900;color:#17496c;font-size:1.05rem}
+.boat-label.left{left:20%}.boat-label.right{right:17%}
+.bear{position:absolute;bottom:48px;width:95px;height:110px}
+.bear.left{left:17%}.bear.right{right:17%}
+.bodybear{position:absolute;bottom:0;left:15px;width:68px;height:72px;border-radius:48%;background:#c98d5b}
+.head{position:absolute;top:0;left:17px;width:62px;height:59px;border-radius:50%;background:#d9a675}
+.ear{position:absolute;top:-7px;width:23px;height:23px;border-radius:50%;background:#c98d5b;border:5px solid #d9a675}
+.ear.one{left:12px}.ear.two{right:12px}
+.eye{position:absolute;top:24px;width:5px;height:7px;border-radius:50%;background:#47352d}
+.eye.one{left:17px}.eye.two{right:17px}
+.muzzle{position:absolute;top:33px;left:23px;width:18px;height:13px;border-radius:50%;background:#f4d8b7}
+.muzzle:after{content:"";position:absolute;top:3px;left:7px;width:5px;height:4px;border-radius:50%;background:#47352d}
+.oar{position:absolute;width:9px;height:105px;background:#d9b17b;border-radius:9px;bottom:12px;transform-origin:bottom;animation:row 1.1s ease-in-out infinite alternate}
+.oar.l{left:5%;transform:rotate(-32deg)}
+.oar.r{right:5%;transform:rotate(32deg);animation-delay:.3s}
+@keyframes row{to{rotate:20deg}}
+
+/* GARDEN */
+.garden{background:linear-gradient(#e8fbff,#a5e5f4 60%,#5bafc5)}
+.grass{position:absolute;bottom:0;width:100%;height:28%;background:linear-gradient(#78c98b,#348e70);border-radius:50% 50% 0 0/15% 15% 0 0}
+.plant{position:relative;width:210px;height:260px;margin:auto;z-index:2}
+.stem{position:absolute;bottom:15px;left:103px;width:8px;height:140px;background:#368d59;border-radius:8px}
+.leaf{position:absolute;width:65px;height:32px;background:#4ebd77;border-radius:100% 0 100% 0;bottom:80px;left:50px;transform:rotate(22deg)}
+.leaf.two{left:104px;bottom:115px;transform:scaleX(-1) rotate(22deg)}
+.petals{position:absolute;top:20px;left:48px;width:110px;height:110px;transform:scale(.7);transition:1s}
+.petals.bloom{transform:scale(1.12) rotate(15deg)}
+.petal{position:absolute;left:38px;top:0;width:36px;height:58px;border-radius:50%;background:#ff8fb8;transform-origin:18px 55px;box-shadow:inset -4px -4px #e86f9d55}
+.petal:nth-child(2){transform:rotate(60deg)}
+.petal:nth-child(3){transform:rotate(120deg)}
+.petal:nth-child(4){transform:rotate(180deg)}
+.petal:nth-child(5){transform:rotate(240deg)}
+.petal:nth-child(6){transform:rotate(300deg)}
+.center{position:absolute;left:48px;top:42px;width:34px;height:34px;border-radius:50%;background:#ffdf75;z-index:2}
+.water-btn{padding:12px 23px;border-radius:25px;background:white;color:#28799b;font-weight:900;box-shadow:0 5px 0 #8bd6e9;margin-top:12px}
+.heart-link{display:none;margin:35px auto;width:90px;height:90px;background:#ff72a6;transform:rotate(-45deg);border-radius:12px;position:relative;animation:heartbeat .8s infinite alternate;cursor:pointer}
+.heart-link:before,.heart-link:after{content:"";position:absolute;width:90px;height:90px;background:#ff72a6;border-radius:50%}
+.heart-link:before{top:-45px;left:0}
+.heart-link:after{left:45px;top:0}
+.heart-link span{position:absolute;z-index:2;transform:rotate(45deg);top:25px;left:17px;width:85px;color:white;font-weight:900;font-size:13px}
+@keyframes heartbeat{to{scale:1.12}}
+
+/* LETTER */
+.letter-page{background:linear-gradient(145deg,#e7fbff,#9bdcf2 60%,#397eaa)}
+.letter{width:88%;max-width:440px;text-align:left;color:white;position:relative;z-index:3}
+.letter h2{font-size:2.7rem;text-align:center;margin-bottom:20px;color:white}
+.letter p{font-size:1rem;line-height:1.8;font-weight:800;margin-bottom:18px}
+.sign{text-align:center;font-family:'Baloo 2';font-size:1.3rem;color:#fff1b9}
+
+.back{position:absolute;top:15px;left:15px;z-index:5;background:#ffffffb8;color:#1b6287;border-radius:20px;padding:8px 14px;font-weight:900}
+</style>
+</head>
+
+<body>
+
+<div class="bubbles" id="bubbles"></div>
+
+<!-- PAGE 1 -->
+<section class="page sea-bg active" id="p1">
+ <div class="content">
+  <div class="zizi">
+   z<span style="position:relative">i
+   <svg class="fishdot" viewBox="0 0 60 40">
+    <path d="M8 20 Q25 0 43 20 Q25 40 8 20Z" fill="#ffb6c9" stroke="white" stroke-width="3"/>
+    <path d="M42 20 L57 8 L57 32Z" fill="#ff8eae" stroke="white" stroke-width="3"/>
+    <circle cx="20" cy="16" r="3" fill="#24506b"/>
+   </svg>
+   </span>zi
+  </div>
+  <p class="smallhint">a tiny ocean surprise for you</p>
+  <button class="play" onclick="go(2)">▶ PLAY</button>
+ </div>
+ <div class="coral">
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+   <path d="M0 150V85Q20 65 15 35Q35 20 40 65Q55 90 60 35Q80 5 80 70Q100 90 110 45Q130 20 125 90L150 150M350 150Q360 90 375 70Q390 40 395 90Q410 110 420 55Q440 20 445 80Q460 100 475 45Q495 30 500 80V150" fill="#ff9fbd" stroke="#f8d1df" stroke-width="5"/>
+  </svg>
+ </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page sea-bg" id="p2">
+ <button class="back" onclick="go(1)">←</button>
+ <div class="content">
+  <div class="star-wrap">
+   <svg viewBox="0 0 200 200" width="100%" height="100%">
+    <defs><linearGradient id="sg" x2="1" y2="1"><stop stop-color="#ffcf75"/><stop offset="1" stop-color="#ef8c55"/></linearGradient></defs>
+    <path d="M100 8 C116 8 120 54 136 63 C151 72 190 55 195 72 C200 89 160 108 158 126 C156 144 183 176 169 188 C155 200 124 168 106 172 C88 176 62 207 48 193 C34 179 62 145 56 128 C50 111 8 96 13 79 C18 62 59 74 74 63 C89 52 84 8 100 8Z" fill="url(#sg)" stroke="#d77b49" stroke-width="5"/>
+    <ellipse cx="79" cy="102" rx="7" ry="10" fill="#553c3b"/>
+    <ellipse cx="123" cy="102" rx="7" ry="10" fill="#553c3b"/>
+    <path d="M87 124 Q101 139 116 124" fill="none" stroke="#8e4d46" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="65" cy="119" r="8" fill="#ff9a9a"/>
+    <circle cx="138" cy="119" r="8" fill="#ff9a9a"/>
+   </svg>
+  </div>
+  <div class="speech" id="speech" style="display:none">ini bunga buat zizi ♡</div>
+  <p class="smallhint">look! a little friend is here</p>
+ </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page sunset" id="p3">
+ <button class="back" onclick="go(2)">←</button>
+ <div class="sun"></div>
+ <div class="water"></div>
+ <div class="content" style="position:absolute;top:9%">
+  <h2 style="font-size:2rem;color:white">across the little sea</h2>
+ </div>
+ <div class="boat">
+  <div class="boat-label left">ashey</div>
+  <div class="boat-label right">zizi</div>
+
+  <div class="bear left">
+   <div class="ear one"></div><div class="ear two"></div>
+   <div class="head"><i class="eye one"></i><i class="eye two"></i><i class="muzzle"></i></div>
+   <div class="bodybear"></div>
+  </div>
+
+  <div class="bear right">
+   <div class="ear one"></div><div class="ear two"></div>
+   <div class="head"><i class="eye one"></i><i class="eye two"></i><i class="muzzle"></i></div>
+   <div class="bodybear"></div>
+  </div>
+
+  <div class="oar l"></div>
+  <div class="oar r"></div>
+  <div class="boat-hull"></div>
+ </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page garden" id="p4">
+ <button class="back" onclick="go(3)">←</button>
+ <div class="grass"></div>
+ <div class="content">
+  <h2 style="font-size:2rem">a flower for you</h2>
+  <div class="plant">
+   <div class="stem"></div>
+   <div class="leaf"></div>
+   <div class="leaf two"></div>
+   <div class="petals" id="petals">
+    <i class="petal"></i><i class="petal"></i><i class="petal"></i>
+    <i class="petal"></i><i class="petal"></i><i class="petal"></i>
+    <i class="center"></i>
+   </div>
+  </div>
+  <button class="water-btn" id="waterBtn" onclick="waterFlower()">water the flower ✿</button>
+  <div class="heart-link" id="heart" onclick="go(5)">
+   <span>click me</span>
+  </div>
+ </div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page letter-page" id="p5">
+ <button class="back" onclick="go(4)">←</button>
+ <div class="bubbles"></div>
+ <article class="letter">
+  <h2>hii, zizi ♡</h2>
+
+  <p>hhii zizi, ini yang ashey bikin buat kamu.</p>
+
+  <p>zizi akhir-akhir ini lagi sibuk banget kelihatan nyaa, semangat yaa sayang. ashey juga sering nunggu notif dari kamu, kamu yang sering ya kasih kabar nyaa, ashey nungguin nih.</p>
+
+  <p>oh iyaa, makasii yaa buat zizi karena udah nemenin ashey sampe sekarang, makasi juga buat zizi karena udah lahir didunia, dan ashey harap zizi bisa tumbuh jadi anak yang hebat.</p>
+
+  <p class="sign">— for my love, zizi. ♡</p>
+ </article>
+</section>
+
+<script>
+function go(n){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('p'+n).classList.add('active');
+}
+
+const bubbleBox=document.getElementById('bubbles');
+
+for(let i=0;i<32;i++){
+ let b=document.createElement('i');
+ b.className='bubble';
+ let s=5+Math.random()*17;
+ b.style.width=s+'px';
+ b.style.height=s+'px';
+ b.style.left=Math.random()*100+'%';
+ b.style.animationDuration=(6+Math.random()*10)+'s';
+ b.style.animationDelay=(-Math.random()*14)+'s';
+ bubbleBox.appendChild(b);
+}
+
+let flowerStarted=false;
+
+const observer=new MutationObserver(()=>{
+ if(document.getElementById('p2').classList.contains('active')&&!flowerStarted){
+  flowerStarted=true;
+
+  let colors=['#ff8db3','#ffd36e','#b9a0ff','#ff9c7a','#9adfbd','#fff0a8'];
+
+  for(let i=0;i<38;i++){
+   let f=document.createElement('div');
+   f.className='flower';
+   f.style.left=Math.random()*100+'%';
+   f.style.animationDelay=(Math.random()*2)+'s';
+   f.style.animationDuration=(3.5+Math.random()*2)+'s';
+
+   f.innerHTML=`<svg viewBox="0 0 40 40">
+   ${[0,1,2,3,4].map(v=>`
+   <ellipse cx="20" cy="9" rx="5" ry="9"
+   fill="${colors[Math.floor(Math.random()*colors.length)]}"
+   transform="rotate(${v*72} 20 20)"/>`).join('')}
+   <circle cx="20" cy="20" r="5" fill="#ffe58a"/>
+   </svg>`;
+
+   document.body.appendChild(f);
+   setTimeout(()=>f.remove(),7000);
+  }
+
+  setTimeout(()=>{
+   document.getElementById('speech').style.display='inline-block';
+  },4600);
+
+  setTimeout(()=>go(3),8000);
+ }
+});
+
+observer.observe(document.getElementById('p2'),{
+ attributes:true,
+ attributeFilter:['class']
+});
+
+function waterFlower(){
+ document.getElementById('petals').classList.add('bloom');
+ document.getElementById('waterBtn').textContent='it bloomed!';
+ document.getElementById('heart').style.display='block';
+}
+</script>
+
+</body>
+  </html>
